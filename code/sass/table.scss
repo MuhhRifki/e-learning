@@ -1,0 +1,196 @@
+@import 'variable';
+@import 'typography';
+@import 'mixin';
+._tb {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    -moz-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    flex-direction: column;
+    border-collapse: separate;
+    justify-content: space-between;
+    width: 100%;
+    tr {
+        width: 100%;
+    }
+    th {
+        @extend ._ct;
+        color: $hx-white;
+        font-weight: bold;
+        background-color: $_main;
+        padding: 5px;
+        border-left: 1px solid $_main;
+        border-top: none;
+    }
+    td {
+        @extend ._ct;
+        font-size: .8em;
+        text-align: center;
+        color: $hx-black;
+        padding: 10px;
+        border-left: 1px solid $_main;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+    td:first-child,
+    th:first-child {
+        border-left: none;
+    }
+}
+
+._tb3g {
+    border-collapse: separate;
+    table-layout: fixed;
+    width: 100%;
+    th {
+        @extend ._ct;
+        color: $hx-black;
+        text-align: left;
+        border-bottom: 1px solid $hx-silver;
+        font-weight: bold;
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    td {
+        @extend ._ct;
+        text-align: left;
+        font-size: .9em;
+        color: $hx-silver;
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $hx-silver;
+    }
+    th,
+    td {
+        overflow: hidden;
+    }
+    td:first-child,
+    th:first-child {
+        width: 40%;
+    }
+}
+
+._tb3g34 {
+    @extend ._tb3g;
+    td:first-child,
+    th:first-child {
+        width: 20%;
+    }
+    td:last-child,
+    th:last-child {
+        width: 20%;
+    }
+}
+
+._tb3g343l {
+    @extend ._tb3g;
+    td:first-child,
+    th:first-child {
+        width: 10%;
+    }
+    td:last-child,
+    th:last-child {
+        width: 20%;
+    }
+}
+
+._tb3g353l {
+    @extend ._tb3g;
+    td:first-child,
+    th:first-child {
+        width: 10%;
+    }
+    td:last-child,
+    th:last-child {
+        width: 20%;
+    }
+}
+
+._tb3g36 {
+    @extend ._tb3g;
+    td:first-child,
+    th:first-child {
+        width: 10%;
+    }
+    td:last-child,
+    th:last-child {
+        width: 17.5%;
+    }
+    td:nth-child(5),
+    th:nth-child(5) {
+        width: 10%;
+    }
+    td:nth-child(3),
+    th:nth-child(3) {
+        width: 27.5%;
+    }
+}
+
+._tb3asi {
+    position: relative;
+    border-radius: 3px;
+    box-shadow: 0.5px 0.5px 1px $hx-silver;
+    margin: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: $hx-white;
+    @include flex-box();
+    @include flex-direction(column);
+    max-width: 100%;
+    font-size: 1em;
+    border: .2px solid $hx-silver !important;
+    thead {
+        padding: 5px;
+        background-color: $hx-silver !important;
+        tr {
+            @include flex-box();
+            @include justify-content(center);
+            @include align-items(center);
+            th {
+                color: $hx-white;
+                text-align: center !important;
+                font-size: 1em;
+                padding: 5px;
+            }
+        }
+    }
+    tbody {
+        tr {
+            @include flex-box();
+            @include flex-direction(row);
+            @include justify-content(left);
+            @include align-items(left);
+            padding: 8px 5px;
+            margin-left: 15px;
+            margin-right: 15px;
+            border-bottom: .5px solid $hx-silver;
+            td {
+                &:first-child {
+                    @include flex(1);
+                    text-align: left;
+                }
+                &:last-child {
+                    max-width: 100% !important;
+                    @include flex(4);
+                    margin-left: 5px;
+                }
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+            &:last-child {
+                td {
+                    max-width: 100% !important;
+                }
+            }
+        }
+    }
+}
